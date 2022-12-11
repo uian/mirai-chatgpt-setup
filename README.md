@@ -1,5 +1,9 @@
 # README
 
+本项目旨在为原项目提供一个简单的 Docker 部署方式，方便大家使用。
+
+原项目地址：[lss233/chatgpt-mirai-qq-bot](https://github.com/lss233/chatgpt-mirai-qq-bot)
+
 ## 1. 安装 Docker & Composer
 
 - [获取 Docker](https://docs.docker.com/get-docker/)
@@ -10,6 +14,8 @@
 ### 2.1 修改配置文件
 
 打开 `Dockerfile`， 修改文件开头用`ARG`声明的账号信息。
+
+以下为启动的必要参数，更多参数配置请参照[原项目](https://github.com/lss233/chatgpt-mirai-qq-bot)的说明。
 
 - `QQ`: QQ账号
 - `QQ_PASS`: QQ密码
