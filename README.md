@@ -1,5 +1,7 @@
 # README
 
+> **当前不可用，等待修复**
+
 本项目旨在为原项目提供一个简单的 Docker 部署方式，方便大家使用。
 
 原项目地址：[lss233/chatgpt-mirai-qq-bot](https://github.com/lss233/chatgpt-mirai-qq-bot)
