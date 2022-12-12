@@ -33,7 +33,7 @@
 
 `docker compose run --rm mirai`
 
-用以上命令启动 Mirai，然后按照提示操作。
+用以上命令启动 Mirai，然后按照提示操作登录。
 
 当出现 `Login successful.` 时，说明配置成功，按 `Ctrl+C` 退出。
 
