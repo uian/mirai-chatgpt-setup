@@ -32,7 +32,7 @@
 3. 在左侧 `Storage` 菜单中找到 `Cookies` 并展开，选中 `https://chat.openai.com`
 4. 找到 `Name` 为 `__Secure-next-auth.session-token` 的一项，复制 `Value` 的值
 
-> - 请注意，此值为 `__Secure-next-auth.session-token` 的 `Value`，而不是 `__Secure-next-auth.session-token.sig` 的 `Value`。
+> - 请注意，此值为 `__Secure-next-auth.session-token` 的 `Value`，而不是 `__Secure-next-auth.callback-url` 或 `__Host-next-auth.csrf-token` 的 `Value`。
 > - 已知此值以 `ey` 开头
 
 ## 3. 配置 Mirai
