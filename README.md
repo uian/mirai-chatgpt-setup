@@ -6,7 +6,7 @@
 
 原项目地址：[lss233/chatgpt-mirai-qq-bot](https://github.com/lss233/chatgpt-mirai-qq-bot)
 
-## 1. 安装 Docker & Composer
+## 1. 安装 Docker & Compose
 
 - [获取 Docker](https://docs.docker.com/get-docker/)
 - [Docker Compose](https://docs.docker.com/compose/install/)
