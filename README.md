@@ -8,7 +8,7 @@
 
 ## 1. 安装 Docker & Compose
 
-- [获取 Docker 桌面版 (已包括 Compose)](https://docs.docker.com/get-docker/)
+- [获取 Docker 桌面版 (已包含 Compose)](https://docs.docker.com/get-docker/)
 
 ## 2. 配置账号
 
