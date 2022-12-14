@@ -6,7 +6,6 @@ services:
       dockerfile: _setup.Dockerfile
     volumes:
       - .:/app
-    tty: true
 
     #########################################
     #########################################
