@@ -22,7 +22,7 @@
 - `SESSION_TOKEN`: OpenAI Sesson token
 - `API_KEY`: （可选）任意字符串
 
-填写完毕后，运行以下命令进行配置文件的生成：
+填写后，运行以下命令生成配置文件
 
 `docker compose run --rm setup`
 
