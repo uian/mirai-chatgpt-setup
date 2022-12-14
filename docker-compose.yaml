@@ -1,28 +1,64 @@
 version: "3.4"
 services:
   setup:
-    build: .
+    build:
+      context: .
+      dockerfile: _setup.Dockerfile
     volumes:
       - .:/app
+    tty: true
+
+    #########################################
+    #########################################
+    ################ 修改这里 ################
+    #########################################
+    #########################################
+
+    environment:
+      #
+      # QQ 账号
+      QQ: 123456789
+
+      # QQ 密码
+      QQ_PASS: qq_password
+
+      # OpenAI session token
+      SESSION_TOKEN: eyJhbGciOiJkaXIiLCJlbmMiOiJBMjU2R0NNIn0..
+
+      # API KEY (如果你不知道这是什么，可以不用管)
+      API_KEY: AnyRandomAPIKey
+
+    #########################################
+    #########################################
+    #########################################
+    #########################################
+    #########################################
 
   mirai:
-    image: ttionya/mirai-http:latest
+    build:
+      context: .
+      dockerfile: _mirai.Dockerfile
     restart: always
     environment:
       LANG: "C.UTF-8"
     volumes:
-      - ./mirai/bots:/mirai/bots
-      - ./mirai/config:/mirai/config
-      - ./mirai/data:/mirai/data
-      - ./mirai/plugin-libraries:/mirai/plugin-libraries
-      - ./mirai/libs:/mirai/libs
-      # - ./mirai/config.json:/mirai/config.json # 如果你要修改 mcl 的设置，就解除这个注释
+      - ./mirai:/mirai
+    networks:
+      - mirai_network
 
   chatgpt:
-    image: lss233/chatgpt-mirai-qq-bot:latest
+    build:
+      context: .
+      dockerfile: _chatgpt.Dockerfile
     restart: always
     environment:
       LANG: "C.UTF-8"
+      XPRA_PASSWORD: "xpra_password"
     volumes:
-      - ./config.json:/app/config.json
+      - ./chatgpt/config.json:/app/config.json
       # - ./fonts:/app/fonts # 如果你想自定义字体，就解除注释
+    networks:
+      - mirai_network
+
+networks:
+  mirai_network:
