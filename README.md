@@ -19,14 +19,14 @@
 
 `cd mirai-chatgpt-setup`
 
-打开本 repo 中的 `docker-compose.yaml`， 填入账号信息。
+打开本 repo 中的 [`docker-compose.yaml`](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/docker-compose.yaml)， 填入账号信息。
 
 其中只包含启动的必要参数，更多参数配置请参照[原项目](https://github.com/lss233/chatgpt-mirai-qq-bot)的说明。
 
-- `QQ`: QQ账号
-- `QQ_PASS`: QQ密码
-- `SESSION_TOKEN`: OpenAI Sesson token
-- `API_KEY`: （可选）任意字符串
+- [QQ](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/docker-compose.yaml#:~:text=QQ%20%E8%B4%A6%E5%8F%B7): QQ账号
+- [QQ_PASS](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/docker-compose.yaml#:~:text=QQ%20%E5%AF%86%E7%A0%81) : QQ密码
+- [SESSION_TOKEN](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/docker-compose.yaml#:~:text=OpenAI%20session%20token) : OpenAI Sesson token
+- [API_KEY](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/docker-compose.yaml#:~:text=API%20KEY): （可选）任意字符串
 
 填写后，运行以下命令生成配置文件
 
