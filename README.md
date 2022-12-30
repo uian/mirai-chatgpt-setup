@@ -32,6 +32,10 @@
 
 `docker compose run --rm setup`
 
+### Apt 镜像源
+
+如果你因为在国内导致 build chatgpt 镜像时过慢或失败，可以在 [`_chatgpt.Dockerfile`](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/_chatgpt.Dockerfile#:~:text=ARG%20TSINGHUA_SOURCE=false) 中将 `TSINGHUA_SOURCE` 设置为 `true`，以使用清华大学的镜像源。
+
 ### 如何获取 OpenAI Session Token
 
 1. 用Chrome浏览器访问 [OpenAI ChatGPT](https://chat.openai.com/chat) 并登录
