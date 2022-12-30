@@ -13,7 +13,13 @@
 
 ## 2. 配置账号
 
-打开 `docker-compose.yaml`， 填入账号信息。
+下载这个 repo 的文件
+
+`git clone https://github.com/paradox8599/mirai-chatgpt-setup.git`
+
+`cd mirai-chatgpt-setup`
+
+打开本 repo 中的 `docker-compose.yaml`， 填入账号信息。
 
 其中只包含启动的必要参数，更多参数配置请参照[原项目](https://github.com/lss233/chatgpt-mirai-qq-bot)的说明。
 
