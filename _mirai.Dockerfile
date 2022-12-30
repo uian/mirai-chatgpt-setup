@@ -6,7 +6,6 @@ ARG MCL_PATH=/mirai
 WORKDIR $MCL_PATH
 
 RUN printf "#!/bin/sh\n\
-rm -rf ./*\n\
 wget -O $MCL_PATH/mcl.zip $MCL_URL\n\
 unzip $MCL_PATH/mcl.zip\n\
 rm $MCL_PATH/mcl.zip\n\

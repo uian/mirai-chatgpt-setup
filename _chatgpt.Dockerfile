@@ -3,9 +3,19 @@ FROM python:3.9-slim
 ARG BOT_URL=https://github.com/lss233/chatgpt-mirai-qq-bot
 ARG BOT_PATH=/app
 
+ARG TSINGHUA_SOURCE=false
+
+ADD ./tsinghua.sources.list /etc/apt/tsinghua.sources.list
+
 WORKDIR $BOT_PATH
 
 ENV DEBIAN_FRONTEND=noninteractive
+
+RUN set -x; if [ $TSINGHUA_SOURCE = true ]; then \
+        echo "Using Tsinghua apt source.\n" && cp /etc/apt/tsinghua.sources.list /etc/apt/sources.list; \
+    else \
+        echo "Using official apt source.\n"; \
+    fi
 
 RUN apt-get update && \
     apt install software-properties-common apt-transport-https wget ca-certificates gnupg2 -yq && \
