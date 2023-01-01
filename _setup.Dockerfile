@@ -12,7 +12,7 @@ accounts:\n\
       kind: PLAIN\n\
       value: $QQ_PASS\n\
     configuration:\n\
-      protocol: ANDROID_PAD\n\
+      protocol: $DEVICE\n\
 ' > /app/mirai/config/Console/AutoLogin.yml \
 && \
 \
