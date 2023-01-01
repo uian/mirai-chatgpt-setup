@@ -8,6 +8,7 @@
 
 - [获取 Docker 桌面版 (已包含 Compose)](https://docs.docker.com/get-docker/)
 - [中文站](https://dockerdocs.cn/get-docker/index.html)
+- [服务器安装 Docker](https://docs.docker.com/engine/install/)
 
 ## 获取本项目
 
