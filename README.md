@@ -6,20 +6,33 @@
 
 原项目地址：[lss233/chatgpt-mirai-qq-bot](https://github.com/lss233/chatgpt-mirai-qq-bot)
 
-## 1. 安装 Docker & Compose
+## 安装 Docker & Compose
 
 - [获取 Docker 桌面版 (已包含 Compose)](https://docs.docker.com/get-docker/)
 - [中文站](https://dockerdocs.cn/get-docker/index.html)
 
-## 2. 配置账号
-
-下载这个 repo 的文件
+## 获取本项目
 
 `git clone https://github.com/paradox8599/mirai-chatgpt-setup.git`
 
-`cd mirai-chatgpt-setup`
+## 编译镜像
 
-打开本 repo 中的 [`docker-compose.yaml`](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/docker-compose.yaml)， 填入账号信息。
+> 通常情况下可跳过此步骤，第一次运行会自动编译。
+> 但当项目有更新时，可能有必要跟随此步骤重新编译打包镜像。
+
+输入命令 `docker compose build` 编译所有镜像。
+
+也可分别编译：
+
+- `docker compose build mirai`: 单独编译 Mirai
+- `docker compose build chatgpt`: 单独编译 chatgpt bot
+- `docker compose build setup`: 单独编译生成配置文件用的镜像
+
+> **Apt 镜像源**: 如果你因为在国内导致 build chatgpt 镜像时过慢或失败，可以在 [`_chatgpt.Dockerfile`](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/_chatgpt.Dockerfile#:~:text=ARG%20TSINGHUA_SOURCE=false) 中将 `TSINGHUA_SOURCE` 设置为 `true`，以使用清华大学的镜像源。
+
+## 配置账号
+
+打开本项目中的 [`docker-compose.yaml`](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/docker-compose.yaml)， 填入账号信息。
 
 其中只包含启动的必要参数，更多参数配置请参照[原项目](https://github.com/lss233/chatgpt-mirai-qq-bot)的说明。
 
@@ -32,10 +45,6 @@
 
 `docker compose run --rm setup`
 
-### Apt 镜像源
-
-如果你因为在国内导致 build chatgpt 镜像时过慢或失败，可以在 [`_chatgpt.Dockerfile`](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/_chatgpt.Dockerfile#:~:text=ARG%20TSINGHUA_SOURCE=false) 中将 `TSINGHUA_SOURCE` 设置为 `true`，以使用清华大学的镜像源。
-
 ### 如何获取 OpenAI Session Token
 
 1. 用Chrome浏览器访问 [OpenAI ChatGPT](https://chat.openai.com/chat) 并登录
@@ -46,7 +55,7 @@
 > - 请注意，此值为 `__Secure-next-auth.session-token` 的 `Value`，而不是 `__Secure-next-auth.callback-url` 或 `__Host-next-auth.csrf-token` 的 `Value`。
 > - 已知此值以 `ey` 开头
 
-## 3. 配置 Mirai
+## 配置 Mirai
 
 `docker compose run --rm mirai setup`
 
@@ -54,10 +63,10 @@
 
 当出现 `Login successful.` 时，说明登录成功，输入 `stop` 或 `Ctrl + C` 退出。
 
-## 4. 启动
+## 启动
 
 `docker compose up` 将在前台启动；
 
 `docker compose up -d` 将在后台启动。
 
-如果出现 `Websocket reconnecting in 5s...` 的提示，请不要担心，这是因为 Mirai 主程序还未启动完毕，等待一段时间即可。
+如果出现 `Websocket reconnecting in 5s...` 的提示，如果 `mirai-chatgpt-setup-mirai-1` 有在正常运行，请不要担心，这是因为 Mirai 主程序还未启动完毕，等待一段时间即可。
