@@ -23,16 +23,15 @@ RUN apt-get update && \
     echo deb [arch=amd64,arm64 signed-by=/usr/share/keyrings/google-chrome.gpg] http://dl.google.com/linux/chrome/deb/ stable main | tee -a /etc/apt/sources.list.d/google-chrome.list && \
     apt-get update && \
     apt install --no-install-recommends xpra xvfb libgl1-mesa-dri xauth google-chrome-stable xterm -yq
-
+    
+RUN apt-get install git -yq && \
+    git clone $BOT_URL . && \
+    pip install -r requirements.txt
+    
 RUN set -eux; \
     apt-get clean; \
     apt-get purge -y --auto-remove -o APT::AutoRemove::RecommendsImportant=false; \
     rm -rf /var/lib/apt/lists/*
-
-RUN apt-get update && \
-    apt-get install git -yq && \
-    git clone $BOT_URL . && \
-    pip install -r requirements.txt
 
 RUN cp docker/xpra.conf /etc/xpra/xpra.conf
 RUN cp docker/start.sh ./start && chmod +x start
