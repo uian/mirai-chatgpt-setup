@@ -38,6 +38,7 @@
 
 - [QQ](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/docker-compose.yaml#:~:text=QQ%20%E8%B4%A6%E5%8F%B7): QQ账号
 - [QQ_PASS](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/docker-compose.yaml#:~:text=QQ%20%E5%AF%86%E7%A0%81) : QQ密码
+- [DEVICE](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/docker-compose.yaml#:~:text=%E4%BC%AA%E8%A3%85%E7%99%BB%E5%BD%95%E8%AE%BE%E5%A4%87)：设备协议，如果登录失败请尝试更换
 - [SESSION_TOKEN](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/docker-compose.yaml#:~:text=OpenAI%20session%20token) : OpenAI Sesson token
 - [API_KEY](https://github.com/paradox8599/mirai-chatgpt-setup/blob/main/docker-compose.yaml#:~:text=API%20KEY): （可选）任意字符串
 
