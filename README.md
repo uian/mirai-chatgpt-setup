@@ -4,15 +4,13 @@
 
 原项目地址：[lss233/chatgpt-mirai-qq-bot](https://github.com/lss233/chatgpt-mirai-qq-bot)
 
+> 以下所有 Docker 命令均在本项目文件根目录下运行。
+
 ## 安装 Docker & Compose
 
 - [获取 Docker 桌面版 (已包含 Compose)](https://docs.docker.com/get-docker/)
 - [中文站](https://dockerdocs.cn/get-docker/index.html)
 - [服务器安装 Docker](https://docs.docker.com/engine/install/)
-
-## 获取本项目
-
-`git clone https://github.com/paradox8599/mirai-chatgpt-setup.git`
 
 ## 编译镜像
 
